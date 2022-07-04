@@ -1,0 +1,105 @@
+﻿<Window x:Class="uchot_tovara.Properties.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:uchot_tovara.Properties"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800"  Closing="clousee" >
+    <DockPanel LastChildFill="True"  >
+        <StackPanel Orientation ="Vertical" DockPanel.Dock="Left">
+            <Border Background="LightGray" BorderBrush="Gray" BorderThickness="3" >
+                <TextBlock Width="400" HorizontalAlignment="Center" >
+                    <TextBlock.Text  >
+                        НА СКЛАДЕ:
+                    </TextBlock.Text>
+                </TextBlock>
+            </Border>
+            <Border Background="LightGray" BorderBrush="Gray" BorderThickness="2" Margin=" 0,5,0,0">
+                <ListView Name="skladlist" ItemsSource="{Binding SKLAD_LIST_VIEW_ITEMS}" >
+                    <ListView.View>
+                        <GridView >
+                            <GridViewColumn Header="название" DisplayMemberBinding ="{ Binding Path= NAME}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header ="количество" DisplayMemberBinding ="{Binding Path= QUANTITY}">
+
+                            </GridViewColumn>
+                            <GridViewColumn Header ="цена за единицу" DisplayMemberBinding ="{Binding Path= PRICE}">
+
+                            </GridViewColumn>
+
+                            <GridViewColumn Header ="единица измерения" DisplayMemberBinding ="{Binding Path= UNIT}">
+
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <!--<ListBox Name="menulist" >
+                    
+                    
+                </ListBox>-->
+            </Border>
+        </StackPanel>
+        <StackPanel  Margin="0,0,0,0" MinWidth="200" >
+            <Border DockPanel.Dock="Top" Background="LightGray" BorderBrush="Gray" BorderThickness="3">
+                <TextBlock >
+                    <TextBlock.Text>
+                        новое зачисление
+                    </TextBlock.Text>
+                </TextBlock>
+            </Border>
+            <Border Margin="0,5,0,0" DockPanel.Dock="Top" Background="LightGray" BorderBrush="Gray" BorderThickness="3">
+                <StackPanel>
+                    <TextBlock >
+                        <TextBlock.Text>
+                            название
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBox  Name="nametov">
+                    </TextBox>
+
+                    <TextBlock >
+                        <TextBlock.Text>
+                            количества
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBox  Name="koltov">
+                    </TextBox>
+
+                    <TextBlock >
+                        <TextBlock.Text>
+                            цена за единицу
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBox  Name="pricetow">
+                    </TextBox>
+
+                    <TextBlock >
+                        <TextBlock.Text>
+                           единица измерения
+                        </TextBlock.Text>
+                    </TextBlock>
+                    <TextBox  Name="unittow">
+                    </TextBox>
+
+                </StackPanel>
+               
+                
+                
+            </Border>
+        </StackPanel>
+
+        <DockPanel LastChildFill="True">
+            <DockPanel LastChildFill="False" DockPanel.Dock="Right">
+                <Button Click="za" DockPanel.Dock="Top" Name="add" Width="130" Content="добавить элемент" Margin="0,0,0,0"></Button>
+                <Button Click="close"  DockPanel.Dock="Top" Name="back" Width="130" Content="на основную страницу" Margin="0,5,0,0"></Button>
+            </DockPanel>
+
+           
+        </DockPanel>
+        
+
+
+    </DockPanel>
+</Window>
